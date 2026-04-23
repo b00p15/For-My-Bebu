@@ -213,7 +213,9 @@ I want to spend the rest of my life with you. ♡ No matter how worse your mood 
 function openLetter(el){
 el.classList.toggle("open");
 
+setTimeout(function(){
 document.getElementById("bgmusic").play();
+},2000);
 }
 
 function showSecret(){
