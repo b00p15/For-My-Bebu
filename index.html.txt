@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For My Bebu ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+background:#f8f2ed;
+font-family:Poppins;
+text-align:center;
+overflow-x:hidden;
+color:#5b4b4f;
+}
+
+h1{
+font-family:'Dancing Script';
+font-size:70px;
+margin-top:70px;
+}
+
+.subtitle{
+font-size:18px;
+opacity:.8;
+}
+
+.envelope{
+margin:50px auto;
+width:250px;
+height:170px;
+background:#d8a7b1;
+position:relative;
+border-radius:12px;
+cursor:pointer;
+box-shadow:0 8px 25px rgba(0,0,0,.1);
+}
+
+.flap{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#c9929d;
+clip-path:polygon(0 0,100% 0,50% 60%);
+transition:.8s;
+}
+
+.letter{
+position:absolute;
+background:white;
+width:85%;
+left:7%;
+top:30px;
+padding:20px;
+border-radius:15px;
+transform:translateY(40px);
+opacity:0;
+transition:1s;
+}
+
+.open .flap{
+transform:rotateX(180deg);
+}
+
+.open .letter{
+transform:translateY(-100px);
+opacity:1;
+}
+
+.board{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+margin:100px 20px;
+}
+
+.polaroid{
+background:white;
+padding:15px;
+width:240px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.polaroid:nth-child(1){
+transform:rotate(-5deg);
+}
+
+.polaroid:nth-child(2){
+transform:rotate(4deg);
+}
+
+.polaroid:nth-child(3){
+transform:rotate(-3deg);
+}
+
+.polaroid img{
+width:100%;
+border-radius:12px;
+}
+
+.caption{
+margin-top:10px;
+font-style:italic;
+}
+
+button{
+margin-top:30px;
+padding:15px 30px;
+border:none;
+background:#d8a7b1;
+color:white;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+}
+
+#hiddenMessage{
+display:none;
+font-size:28px;
+margin:40px;
+font-family:'Dancing Script';
+}
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+top:0;
+left:0;
+}
+
+.heart{
+position:absolute;
+font-size:22px;
+animation:float 7s linear infinite;
+opacity:.4;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-100vh);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts">
+<div class="heart" style="left:15%">♡</div>
+<div class="heart" style="left:50%;animation-delay:2s;">♡</div>
+<div class="heart" style="left:80%;animation-delay:4s;">♡</div>
+</div>
+
+<h1>For My Bebu ♡</h1>
+<p class="subtitle">
+A scrapbook made for the best girlfriend.
+</p>
+
+<div class="envelope" onclick="openLetter(this)">
+<div class="flap"></div>
+
+<div class="letter">
+You make my life brighter, happier, and more beautiful. ♡
+</div>
+</div>
+
+<div class="board">
+
+<div class="polaroid">
+<img src="photo1.jpg">
+<div class="caption">Being with you feels like the dream I used to have when I was a teen came true.</div>
+</div>
+
+<div class="polaroid">
+<img src="photo2.jpg">
+<div class="caption">I'll always be with you and support you no matter what.</div>
+</div>
+
+<div class="polaroid">
+<img src="photo3.jpg">
+<div class="caption">I love you in every heartbeat ♡</div>
+</div>
+
+</div>
+
+<button onclick="showSecret()">
+Open Another Secret
+</button>
+
+<div id="hiddenMessage">
+I want to spend the rest of my life with you. ♡ No matter how worse your mood swings get.
+</div>
+
+<audio autoplay loop controls>
+<source src="Home.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function openLetter(el){
+el.classList.toggle("open");
+}
+
+function showSecret(){
+document.getElementById("hiddenMessage").style.display="block";
+}
+</script>
+
+</body>
+</html>
